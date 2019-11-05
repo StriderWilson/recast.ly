@@ -11,26 +11,6 @@ var VideoListEntry = (props) => (
   </div>
 );
 
-// class VideoListEntry extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     return (
-//     <div className="video-list-entry media">
-//       <div className="media-left media-middle">
-//         <img className="media-object" src= {window.fakeVideoData[0]} alt="" />
-//     </div>
-//     <div className="media-body">
-//       <div className="video-list-entry-title">{window.fakeVideoData[0].snippet.title}</div>
-//       <div className="video-list-entry-detail">{window.fakeVideoData[0].snippet.description}</div>
-//     </div>
-//   </div>
-//   )
-//   }
-// }
-
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
 VideoListEntry.propTypes = {

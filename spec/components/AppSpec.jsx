@@ -7,7 +7,7 @@ describe('App', function() {
     findRenderedDOMComponentWithClass,
     scryRenderedDOMComponentsWithClass
   } = React.addons.TestUtils;
-
+  
   var app;
 
   beforeEach(function() {
