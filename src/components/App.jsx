@@ -13,8 +13,8 @@ class App extends React.Component {
     };
   }
 
-  handleClick() {
-    console.log('hello');
+  handleClick(childData) {
+    this.setState({current: childData});
   }
 
 
@@ -31,7 +31,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.current}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.state.videos} onClick={this.handleClick}/>
+            <VideoList videos={this.state.videos} onClick={this.handleClick.bind(this)}/>
           </div>
         </div>
       </div>);
