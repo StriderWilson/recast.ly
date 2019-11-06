@@ -10,6 +10,18 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.queryDog = {
+      key: YOUTUBE_API_KEY,
+      query: 'dog',
+      max: 5
+    };
+    this.default = undefined;
+    console.log(this.props.searchYouTube(this.queryDog, (data) => {
+      return data;
+    }));
+
+    console.log(this.default);
     this.state = {
       videos: exampleVideoData,
       current: exampleVideoData[0]
@@ -26,7 +38,10 @@ class App extends React.Component {
       query: query,
       max: 5};
     searchYouTube(request, (data) => {
-      console.log(data);
+      this.setState({
+        videos: data,
+        current: data[0]
+      });
     });
 
   }
