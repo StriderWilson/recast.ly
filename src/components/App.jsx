@@ -2,6 +2,9 @@
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
+import Search from './Search.js';
+import searchYouTube from '../lib/searchYouTube.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
 
 
 class App extends React.Component {
@@ -17,13 +20,24 @@ class App extends React.Component {
     this.setState({current: childData});
   }
 
+  handleQuery(query) {
+    var request = {
+      key: YOUTUBE_API_KEY,
+      query: query,
+      max: 5};
+    searchYouTube(request, (data) => {
+      console.log(data);
+    });
+
+  }
+
 
   render() {
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <Search query = {this.handleQuery.bind(this)}/>
           </div>
         </nav>
         <div className="row">
